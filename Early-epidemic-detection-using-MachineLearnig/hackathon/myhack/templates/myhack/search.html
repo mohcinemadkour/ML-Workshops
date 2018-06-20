@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<!-- link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" -->
+{% load static %}
+<!-- link rel="stylesheet" type="text/css" href="{% static 'myapp/css/t1.css' %}" -->
+<link rel="stylesheet" type="text/css" href="{% static 'myhack/css/carousel.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'myhack/css/bootstrap.min.css' %}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{% static 'myhack/css/blog.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'myhack/css/animated.css' %}">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'myhack/css/animated.css' %}">
+<link href="{% static 'myhack/css/bootstrap.minx.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'myhack/css/bootstrap-select.minx.css'%}" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+  <!--link rel="stylesheet" type="text/css" href="{% static 'myapp/css/bootstrap-select.min.css' %}" rel="stylesheet"-->
+  <style type="text/css">
+
+
+  #loading {
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   position: fixed;
+   display: block;
+   opacity: 0.7;
+   background-color: #fff;
+   z-index: 99;
+   text-align: center;
+    }
+
+    #loading-image {
+      position: absolute;
+      top: 20%;
+      left: 42%;
+      z-index: 100;
+    }
+ 
+
+  iframe {
+  margin-top: 20px;  
+  width: 100%;
+  height: 500px; 
+
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  border-radius: 12px;
+
+  -moz-box-shadow: 4px 4px 14px #000;
+  -webkit-box-shadow: 4px 4px 14px #000;
+  box-shadow: 1px 1px 1px #000;
+
+  }
+  
+.inline-inputs select {
+    box-sizing: border-box;
+    width: 420px;
+    height: 100%;
+    border-radius: 3px;
+    display: block;
+    padding: 5px 8px;
+    width: 100%;
+
+}
+
+
+  </style>
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+ <script type="text/javascript">
+  $(document).ready(function() {
+    $('.js-example-basic-single').select2();
+  });
+
+ </script>
+
+
+<head>  
+  <title>Search</title>  
+</head>
+<body>
+  <div id="loading">
+        <img id="loading-image" src="{% static 'myhack/img/loader2.gif' %}" alt="Loading..." />
+  </div>
+  <div class="container hero-bkg-animated">
+
+      <header class="blog-header py-3">
+        <div class="row flex-nowrap justify-content-between align-items-center">
+          <div class="col-4 pt-1">
+          </div>
+          <div class="col-4 text-center">
+            <a class="blog-header-logo text-dark" href="#">Early Epidemic Detection</a>
+          </div>
+          <div class="col-4 d-flex justify-content-end align-items-center">
+          </div>
+        </div>
+      </header>
+   
+      <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+        <a class="p-2 text-muted text-dark" href="../home">Home</a>
+          <a class="p-2 text-muted text-dark" href="#">Wiki</a>
+          <a class="p-2 text-muted text-dark" href="#">Technology</a>
+          <a class="p-2 text-muted text-dark" href="../design">Design</a>
+          <a class="p-2 text-muted text-dark" href="#"> <i class="fa fa-github"></i> GitHub</a>
+          <!--a class="p-2 text-muted text-dark" href="#"> <i class="fa fa-youtube-square" aria-hidden="true"></i> YouTube</a-->
+     
+        </nav>
+      </div>
+      <h2 id="live-search_1">Live Query</h2>
+
+      <div class="panel panel-primary">
+       <div class="panel-heading"><b>Generic Questions </b></div>
+       <div class="panel-body">
+       <ul style="list-style-type: none">
+       <form action="" method="post"> {% csrf_token %} 
+       <b>What are the common </b>
+          <select class="selectpicker" data-show-subtext="true" data-live-search="true" name="selectx" id="selectx">
+            <option>District</option>
+            <option>Disease</option>
+            <option>PatientMaritalStatus</option>
+            <option>Gender</option>
+            <option>Age</option>
+          </select>
+         <b> for the </b> 
+          <!--select class="js-example-basic-single" name="select1" id="select1"-->
+          <select class="selectpicker"  data-show-subtext="true" data-live-search="true" name="meal" id="meal" onChange="changecat(this.value);">
+            <option value="Disease">Disease</option>
+            <option value="PatientMaritalStatus">PatientMaritalStatus</option>
+            <option value="Gender">Gender</option>
+            <option value="District">District</option>
+            <option value="Age">Age</option>
+            <!--option value="Treatment">Treatment</option-->
+          </select>
+          <b>name: </b>
+          <select  class="selectpicker" name="category" id="category">
+                <option value="" selected>Select</option>
+          </select> 
+             <input type="submit" class="btn btn-primary" name="AskQuestion" id="Query" value="AskQuestion" />
+       </ul>
+
+       </form>
+       </div>
+       </div>
+
+
+      <iframe src="../graph" allowfullscreen></iframe>
+        
+        <div class="panel panel-success">
+        <div class="panel-heading"><b>Previous Query</b></div>
+        <div class="panel-body bg-success">
+        <ul style="list-style-type: none">
+        {% for item in previous_query %}
+            {% if forloop.counter == 1 %}
+            <li> <b> { 'Common' :{{item}}</li> </b>
+            {% endif %}
+            {% if forloop.counter == 2 %}
+            <li><b>'For the': {{item}}</li></b>
+            {% endif %}
+            {% if forloop.counter == 3 %}
+            <li><b>'Name': {{item}} }</li></b>
+            {% endif %}
+        {% endfor %}
+        </ul>      
+       </div>
+       </div>
+
+        
+      <hr>
+  </div>
+
+<script language="javascript" type="text/javascript">
+     $(window).load(function() {
+     $('#loading').hide();
+  });
+</script>
+
+
+<script type="text/javascript">
+  
+var mealsByCategory = {
+    Disease: {{content3|safe}},
+    PatientMaritalStatus: {{content4|safe}},
+    Gender: {{content5|safe}},
+    District: {{content6|safe}},
+    Age: {{content7|safe}}
+}
+
+    function changecat(value) {
+        if (value.length == 0) document.getElementById("category").innerHTML = "<option></option>";
+        else {
+            var catOptions = "";
+            for (categoryId in mealsByCategory[value]) {
+                catOptions += "<option>" + mealsByCategory[value][categoryId] + "</option>";
+            }
+            document.getElementById("category").innerHTML = catOptions;
+        }
+        $('#category').selectpicker('refresh');
+    }
+
+</script>
+
+
+<link href="{% static 'myhack/js/compiler.js' %}">
+</body>
+  <script src="{% static 'myhack/js/jqueryx.min.js' %}"></script>
+  <script src="{% static 'myhack/js/bootstrapx.min.js' %}"></script>
+  <script src="{% static 'myhack/js/bootstrap-selectx.min.js' %}"></script>
+</html>

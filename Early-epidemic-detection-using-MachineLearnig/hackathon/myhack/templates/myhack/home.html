@@ -1,0 +1,55 @@
+{% extends 'base1.html'%}
+{%load static %}
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'myhack/css/animated.css' %}">
+
+<h1> home </h1>
+
+<!DOCTYPE html>
+<html>
+<head>	
+	{% block head %}
+	<title>Home</title>
+	{% endblock %}
+    
+</head>
+<body>
+	{% block body %}
+		<div class="container hero-bkg-animated">
+		 <div class="container" style="position: relative; left:-1.2%">
+
+        <div class="card-deck mb-4 text-center">
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal"></h4>
+          </div>
+          <div class="card-body ">
+            
+           
+
+			<form style="vertical-align: middle; margin: 0 auto; width: 70%" class="form-inline" method="post" action='../search/' enctype="multipart/form-data"> {% csrf_token %}
+				<div class='form-group'>
+			<input required autofocus type="file" style="width:100%; left:80%; border:2px solid #fdfdfd; padding:10px; border-radius: 6px; -webkit-border-radius:6px; -moz-border-radius:6px; position: relative; border-color: brown " name="files" id="_files" multiple/>
+			<!-- p class="help-block">Example block-level help text here.</p -->
+
+			<button style="position: relative; top:-40px; left:150%" type="submit" class="btn btn-default btn-sm btn-outline-secondary" id='submitx'> <span class="glyphicon glyphicon-open" id="_submit"></span>  <b>Upload</b> </button>
+					      </div>
+			<!-- input type="submit" value="Upload" -->	    				
+	        </form> 
+
+
+
+          </div>
+        </div>
+
+        </div>
+        </div>	
+      </script>
+
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,16 @@
+﻿PatientID 			80AC01B2-BD55-4BE0-A59A-4024104CF4E9
+PatientGender			Male
+PatientDateOfBirth		1947-12-28 02:45:40.547
+PatientMaritalStatus	   	Married
+District			Jaipur
+AdmissionID			2
+PrimaryDiagnosisDescription	Direct infection of joint in infectious and parasitic diseases classified elsewhere
+PrimaryDiagnosisCode		M01.X
+AdmissionStartDate		2011-10-12 14:55:02.027
+AdmissionEndDate		2011-10-22 01:16:07.557
+LabName				URINALYSIS: RED BLOOD CELLS
+LabValue			1.8
+LabUnits			rbc/hpf
+LabDateTime			1992-07-01 01:36:17.910
+
+
